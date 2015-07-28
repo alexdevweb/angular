@@ -5,15 +5,16 @@
 /**
  * Déclaration de l'application demoApp
  */
-var demoApp = angular.module('demoApp', [
+/*var demoApp = angular.module('demoApp', [
     // Dépendances du "module"
-    'todoList'
-]);
+    'todoList',
+    'ngAnimate'
+]);*/
 
 /**
  * Déclaration du module todoList
  */
-var todoList = angular.module('todoList',[]);
+var todoList = angular.module('todoList',['ngAnimate']);
 
 
 /**
@@ -24,7 +25,12 @@ todoList.controller('todoCtrl', ['$scope',
 
         // Pour manipuler plus simplement les todos au sein du contrôleur
         // On initialise les todos avec un tableau vide : []
-        var todos = $scope.todos = [];
+        var todos = $scope.todos = [
+            {
+                title: 'bla',
+                completed: false
+            }
+        ];
 
         // Ajouter un todo
         $scope.addTodo = function () {

@@ -118,3 +118,34 @@ input[type="checkbox"]{
     margin-top:30px;
     margin-bottom:30px;
 }
+
+/*------------------------------------------*/
+            /*Animations CSS3*/
+/*------------------------------------------*/
+
+.ng-enter, .ng-leave{
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-duration: 1s;
+    -moz-animation-fill-mode: both;
+}
+
+.roll.ng-enter{
+    -webkit-animation-name: rollIn;
+    -moz-animation-name: rollIn;
+}
+
+.roll.ng-leave{
+    -webkit-animation-name: rollOut;
+    -moz-animation-name: rollOut;
+}
+
+.fade.ng-enter{
+    -webkit-animation-name: fadeIn;
+    -moz-animation-name: fadeIn;
+}
+
+.fade.ng-leave{
+    -webkit-animation-name: fadeOut;
+    -moz-animation-name: fadeOut;
+}

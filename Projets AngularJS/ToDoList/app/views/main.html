@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="fr" ng-app="demoApp">
+<html lang="fr" ng-app="todoList">
 <head>
     <meta charset="utf-8" />
     <title>Todo List</title>
     <link rel="stylesheet" href="../apparence/style.css">
+    <link rel="stylesheet" href="../apparence/animate.css">
     <script src="../js/angular.js"></script>
+    <script src="../js/angular-animate.min.js"></script>
     <script src="../js/todoList.js"></script>
 </head>
 <body>
@@ -17,7 +19,7 @@
     </form>
     <article ng-show="todos.length">
         <ul id="todo-list">
-            <li ng-repeat="todo in todos" ng-class="{completed: todo.completed}">
+            <li ng-repeat="todo in todos" ng-class="{completed: todo.completed}" class="fade">
                 <div class="view">
                     <input class="mark" type="checkbox" ng-model="todo.completed" />
                     <span>{{todo.title}}</span>

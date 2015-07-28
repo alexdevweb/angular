@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>hello</title>
+    <script src="../js/angular.min.js"></script>
+</head>
+<body>
+
+    <input type="text" ng-model="nom"/>
+    <select ng-model="order">
+        <option value="username">Organiser par nom</option>
+        <option value="content">Organiser par contenu</option>
+    </select>
+
+    <div ng-init="users=[{username:'Marc', content:'Salut les gens'}, {username:'Sophie', content:'Coucou'}, {username:'John', content:'Sa va ?'}]">
+        <div ng-repeat="user in users | filter:{username:nom} | orderBy:order">
+            <p><strong>{{user.username | lowercase}}</strong><br>
+                {{user.content}}
+            </p>
+   </div>
+</body>
+</html>

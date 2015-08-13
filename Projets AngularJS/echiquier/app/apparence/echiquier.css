@@ -1,0 +1,42 @@
+*{
+    padding: 0;
+    margin:0;
+}
+
+html, body{
+    height: 100%;
+}
+
+.wrapper{
+    height: 95%;
+}
+
+.echiquier {
+    height: 80%;
+    width: 65%;
+    margin: auto;
+}
+
+#titre{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#button{
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.cases {
+    width: 50px;
+    height: auto;
+}
+
+.bplus{
+    background-color: lightgreen;
+}
+
+.bmoins{
+    background-color: orangered;
+}

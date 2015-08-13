@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-controller="casesCtrl" ng-app="echiquier">
+<head>
+    <meta charset="UTF-8">
+    <title>Mon échiquier</title>
+
+    <link rel="stylesheet" type="text/css" href="../apparence/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../apparence/colorpicker.css" />
+    <link rel="stylesheet" type="text/css" href="../apparence/echiquier.css" />
+
+    <style>
+        .odd{
+            background-color: {{casesPair}};
+        }
+
+        .even{
+            background-color: {{casesImpair}};
+        }
+    </style>
+
+</head>
+<body class="wrapper">
+
+    <h1 id="titre"> Echiquier </h1>
+
+    <section class="container wrapper">
+        <div class="row wrapper">
+            <table class="table table-bordered echiquier">
+                <tbody>
+                    <tr ng-repeat="caseL in casesL track by $index" ng-init="ligne = $index" class="cases">
+                        <td ng-repeat="caseC in casesC track by $index" ng-init="colonne = $index" class="cases" ng-class="{odd: (colonne + ligne)%2, even: !((colonne + ligne)%2) }"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="button">
+                <button class="btn bplus" ng-click="ajouter()">+</button>
+                <button class="btn bmoins" ng-click="retirer()">-</button>
+                <button class="btn btn-lg odd" colorpicker colorpicker-close-on-select ng-model="casesPair">Change la couleur</button>
+                <button class="btn btn-lg even" colorpicker colorpicker-close-on-select ng-model="casesImpair">Change la couleur</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/echiquier.js"></script>
+    <script src="../js/jquery-2.1.4.min.js"></script>
+    <script src="../js/bootstrap-colorpicker-module.js"></script>
+    <script src="../apparence/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
